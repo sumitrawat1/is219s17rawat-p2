@@ -71,14 +71,12 @@ var mImages = [];
 
 // Holds the retrived JSON information
 var mJson;
-var mUrl;
+var mUrl = "images.json";
 
- if($_GET["json"] == undefined){
-	mUrl = "images.json";
-   }
- else {
+ if($_GET["json"] != undefined){
 	mUrl = $_GET["json"];
- }
+}
+
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
 mRequest.onreadystatechange = function() {

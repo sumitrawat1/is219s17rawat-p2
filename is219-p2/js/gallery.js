@@ -32,16 +32,36 @@ function animate() {
 
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
+var mCurrentIndex = 0;
 function swapPhoto() {
-	//Add code here to access the #slideShow element.
-	//Access the img element and replace its source
-	//with a new image from your images array which is loaded
-	//from the JSON string
+	if(mCurrentIndex < 0){
+		mCurrentIndex += mImages.length;
+	}
+
+	$("#photo").attr('src', mImages[mCurrentIndex].image);
+	$(".location").text("Location: "+mImages[mCurrentIndex].location);
+	$(".description").text("Description: "+mImages[mCurrentIndex].description);
+	$(".date").text("Date: "+mImages[mCurrentIndex].date);
+
+
+	mCurrentIndex++;
+	if(mCurrentIndex >=  mImages.length){
+		mCurrentIndex = 0;
+	}
 	console.log('swap photo');
 }
 
-// Counter for the mImages array
-var mCurrentIndex = 0;
+function getQueryParams(qs) {
+	qs = qs.split("+").join(" ");
+	var params = {}, tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+	while (tokens = re.exec(qs)) {
+		params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+	}
+	return params;
+}
+
+var $_GET = getQueryParams(document.location.search);
+
 
 // XMLHttpRequest variable
 var mRequest = new XMLHttpRequest();
@@ -51,7 +71,14 @@ var mImages = [];
 
 // Holds the retrived JSON information
 var mJson;
+var mUrl;
 
+ if($_GET["json"] == undefined){
+	mUrl = "images.json";
+   }
+ else {
+	mUrl = $_GET["json"];
+ }
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
 mRequest.onreadystatechange = function() {
@@ -63,7 +90,7 @@ mRequest.onreadystatechange = function() {
 
  for(var i=0; i < mJson.images.length;i++){
      var myline = mJson.images[i];
-     mImages.push(new GalleryImage(myline.location,myline.description,myline.date,myline.image));
+mImages.push(new GalleryImage(myline.imgLocation,myline.description,myline.date,myline.imgPath));
    }
        console.log(mJson);
 

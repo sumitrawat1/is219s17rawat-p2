@@ -3,6 +3,10 @@ body {
 	font-family: 'Century Gothic', sans-serif;
 	background-image: url(../img/geometry.jpg);
 }
+#photo{
+	height: 400px;
+	width: 500px;
+}
 
 #photoBooth {
 	margin-top: .2em;

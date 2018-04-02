@@ -1,0 +1,46 @@
+{
+    "images": [
+        {
+            "imgPath": "img/wonders/Chichen_Itza.jpg",
+            "imgLocation": "Mexico ",
+            "description": "One of seven modern wonders of the world",
+            "date": "04/01/2018"
+        },
+        {
+            "imgPath": "img/wonders/Christ_Redeemer.jpg",
+            "imgLocation": "Brazil",
+            "description": "One of seven modern wonders of the world",
+            "date": "04/01/2018"
+        },
+        {
+            "imgPath": "img/wonders/Machu_Picchu.jpg",
+            "imgLocation": "Peru",
+            "description": "One of seven modern wonders of the world",
+            "date": "04/01/2018"
+        },
+        {
+            "imgPath": "img/wonders/Great_Wall.jpg",
+            "imgLocation": "China",
+            "description": "One of seven modern wonders of the world",
+            "date": "04/01/2018"
+        },
+        {
+            "imgPath": "img/wonders/Jordan.jpg",
+            "imgLocation": "Ancient City",
+            "description": "One of seven modern wonders of the world",
+            "date": "04/01/2018"
+        },
+        {
+            "imgPath": "img/wonders/Taj_Mahal.jpg",
+            "imgLocation": "India",
+            "description": "Taj Mahal",
+            "date": "04/01/2018"
+        },
+        {
+            "imgPath": "img/wonders/Roman_Colosseum.jpg",
+            "imgLocation": "Italy",
+            "description": "One of seven modern wonders of the world",
+            "date": "04/01/2018"
+        }
+  ]
+}
